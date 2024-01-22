@@ -1,40 +1,46 @@
 <!--suppress HtmlDeprecatedAttribute -->
-<h1 align="center">前端开发文档</h1>
+<h1 align="center">Hi 🥳, 前端开发文档</h1>
+<h3 align="center">使用 React 开发的 Prometheus 云原生运维监控告警系统前端</h3>
+
+<p align="center">
+  <a>
+    <img src="https://img.shields.io/badge/-Ant Design-blue?style=flat-square&logo=antdesign&logoColor=white" alt="">
+  </a>
+</p>
+
+<hr>
 
 ## ⚡ 开发依赖安装说明
 
 基础模块：
 
 ```bash
-# 安装 cnpm
-npm i -g cnpm
-
 # 自动格式化代码
-cnpm i --save-dev --save-exact prettier
-cnpm i --save-dev @types/node 
+npm i --save-dev --save-exact prettier
+npm i --save-dev @types/node 
 ```
 
 开发安装：
 
 ```bash
 # 字体
-cnpm i misans
+npm i misans
 
 # UI 和图标
-cnpm i antd@4.24.14
-cnpm i @ant-design/icons
-cnpm i moment
+npm i antd@4.24.14
+npm i @ant-design/icons
+npm i moment
 
 # 路由
-cnpm i react-router
-cnpm i react-router-dom
+npm i react-router
+npm i react-router-dom
 
 # 样式
-cnpm i less less-loader
+npm i less less-loader
 
 # 网络请求
-cnpm i axios
+npm i axios
 
 # 数据
-cnpm i valtio
+npm i valtio
 ```

@@ -1,0 +1,269 @@
+@import "/src/assets/css/pandora-vars";
+
+// 全局样式
+* {
+  font-family: MiSans, serif;
+}
+
+// 左边
+.admin-sider {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh; /* 设置固定高度为视口高度 */
+  overflow: auto; /* 添加滚动条 */
+}
+
+// 调整收缩菜单为 60
+.ant-layout-sider-children .ant-menu.ant-menu-inline-collapsed {
+  width: @MENU-COLLAPSED-WIDTH;
+}
+
+// 扩大收缩图标后 padding 需要调整
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-item,
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-item,
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-item-group > .ant-menu-item-group-list > .ant-menu-submenu > .ant-menu-submenu-title,
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title {
+  padding: 0 calc(50% - 18px / 2);
+}
+
+.admin-layout-logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: @HEADER-HEIGHT;
+  line-height: @HEADER-HEIGHT;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: @MENU-BG-COLOR;
+  text-align: center;
+
+  img {
+    height: @HEADER-HEIGHT;
+    line-height: @HEADER-HEIGHT;
+    padding: 12px 0;
+    user-select: none;
+  }
+}
+
+// 菜单
+.admin-sider-menu {
+  margin-top: @HEADER-HEIGHT;
+  padding: 10px 0;
+  overflow-y: scroll;
+  grid-template-rows: 1fr;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  user-select: none;
+}
+
+// 隐藏菜单滚动条
+.admin-sider::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.admin-sider-menu::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+// Header
+.admin-header {
+  height: @HEADER-HEIGHT;
+  line-height: @HEADER-HEIGHT;
+  background-color: #ffffff;
+  box-shadow: @BOTTOM-BOX-SHADOW;
+  border-bottom: @BOTTOM-BOX-BORDER;
+  z-index: 1;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+
+  // 页面菜单名称
+  .admin-header-title {
+    display: flex;
+    font-size: 16px;
+    font-weight: bolder;
+    margin-left: 5px;
+  }
+
+  // 菜单名称前面的红点装饰
+  .admin-header-title::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 8px;
+    position: relative;
+    top: 20px;
+    left: -5px;
+    background: #CC0033;
+  }
+
+  // 用户头像下拉菜单
+  .admin-header-menu {
+    cursor: pointer;
+
+    .admin-header-dropdown {
+      display: block;
+      height: @HEADER-HEIGHT;
+      line-height: @HEADER-HEIGHT;
+    }
+  }
+}
+
+// 下拉菜单
+.ant-dropdown-menu {
+  border-radius: 0;
+}
+
+/*Statistic*/
+.ant-statistic-title {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 0;
+}
+
+.ant-statistic-content {
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+// 页码主体 Header
+.admin-dashboard-page-header {
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(9, 30, 66, 0.05);
+  border-bottom: 1px solid rgba(9, 30, 66, 0.08);
+  z-index: 1;
+}
+
+.admin-page-header {
+  display: flex;
+  padding: @BLANK-PADDING;
+  background-color: #ffffff;
+
+  // Dashboard Header
+  // 左边
+  .admin-left {
+    display: flex;
+    margin-right: auto;
+
+    .admin-info {
+      height: 60px;
+      padding-left: 15px;
+
+      // 欢迎信息
+      .admin-welcome {
+        font-size: 18px;
+        font-weight: bold;
+        height: 35px;
+        line-height: 35px;
+      }
+
+      // 用户说明
+      .admin-desc {
+        color: rgba(0, 0, 0, .45);
+        height: 25px;
+        line-height: 25px;
+      }
+    }
+  }
+
+  // 右边
+  .admin-right {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  // 提示信息
+  .admin-notice {
+    flex: 1;
+    padding: 10px 20px;
+    background-color: rgb(241, 242, 243);
+    // https://img.alicdn.com/imgextra/i2/O1CN01rIXUqO1TWD2wrsGgW_!!6000000002389-0-tps-3200-400.jpg
+    background-image: url(/src/assets/image/background/notice-bg.png);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+
+    * {
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.7) !important;
+      letter-spacing: 1px;
+      line-height: 25px;
+    }
+
+    ol {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// 主题内容区
+.admin-content {
+  //margin: 20px;
+  min-height: 200px;
+  background-color: #ffffff;
+}
+
+.admin-search {
+  padding: 0 20px;
+  padding-bottom: 5px;
+  box-shadow: 0 2px 10px rgba(9, 30, 66, 0.05);
+  border-bottom: 1px solid rgba(9, 30, 66, 0.08);
+}
+
+// 按钮组，左对齐的
+.admin-btn-group-left {
+  button {
+    margin-right: 10px;
+  }
+}
+
+// 按钮组，右对齐的
+.admin-btn-group-right {
+  button {
+    margin-left: 10px;
+  }
+}
+
+// 操作栏
+.admin-op {
+  display: flex;
+  justify-content: space-between;
+  padding: @BLANK-PADDING;
+}
+
+// 数据栏
+.admin-data {
+  padding: @BLANK-PADDING;
+  padding-top: 0;
+
+  .ant-table {
+    border: 1px solid #f0f0f0;
+    border-bottom: none;
+  }
+
+  .ant-tag {
+    border: none;
+  }
+}
+
+.admin-table-btn-group {
+  .ant-btn {
+    height: 24px;
+    line-height: 24px;
+    margin-right: 5px;
+    padding: 0 10px;
+  }
+}
+
+.admin-footer {
+  text-align: center;
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.5);
+}
